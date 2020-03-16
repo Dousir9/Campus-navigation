@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		316880DF2408D94F00D9FB87 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316880DD2408D94F00D9FB87 /* Graph.cpp */; };
+		317FC45A241C73B000BCE3EA /* RBTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317FC458241C73B000BCE3EA /* RBTree.cpp */; };
+		31FA3F15240292E700D5C95E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F14240292E700D5C95E /* main.cpp */; };
+		31FA3F1D2402931100D5C95E /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F1B2402931100D5C95E /* Menu.cpp */; };
+		31FA3F20240298A800D5C95E /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F1E240298A800D5C95E /* Global.cpp */; };
+		31FA3F232402A47800D5C95E /* Tourist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F212402A47800D5C95E /* Tourist.cpp */; };
+		31FA3F262402A48500D5C95E /* Admin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F242402A48500D5C95E /* Admin.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31FA3F0F240292E700D5C95E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		316880DD2408D94F00D9FB87 /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		316880DE2408D94F00D9FB87 /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
+		317FC458241C73B000BCE3EA /* RBTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RBTree.cpp; sourceTree = "<group>"; };
+		317FC459241C73B000BCE3EA /* RBTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RBTree.hpp; sourceTree = "<group>"; };
+		31FA3F11240292E700D5C95E /* 基于清华大学的校园导游系统 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "基于清华大学的校园导游系统"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FA3F14240292E700D5C95E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		31FA3F1B2402931100D5C95E /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		31FA3F1C2402931100D5C95E /* Menu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Menu.hpp; sourceTree = "<group>"; };
+		31FA3F1E240298A800D5C95E /* Global.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Global.cpp; sourceTree = "<group>"; };
+		31FA3F1F240298A800D5C95E /* Global.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Global.hpp; sourceTree = "<group>"; };
+		31FA3F212402A47800D5C95E /* Tourist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tourist.cpp; sourceTree = "<group>"; };
+		31FA3F222402A47800D5C95E /* Tourist.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tourist.hpp; sourceTree = "<group>"; };
+		31FA3F242402A48500D5C95E /* Admin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Admin.cpp; sourceTree = "<group>"; };
+		31FA3F252402A48500D5C95E /* Admin.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Admin.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31FA3F0E240292E700D5C95E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31FA3F08240292E700D5C95E = {
+			isa = PBXGroup;
+			children = (
+				31FA3F13240292E700D5C95E /* 基于清华大学的校园导游系统 */,
+				31FA3F12240292E700D5C95E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31FA3F12240292E700D5C95E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31FA3F11240292E700D5C95E /* 基于清华大学的校园导游系统 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31FA3F13240292E700D5C95E /* 基于清华大学的校园导游系统 */ = {
+			isa = PBXGroup;
+			children = (
+				31FA3F14240292E700D5C95E /* main.cpp */,
+				31FA3F1B2402931100D5C95E /* Menu.cpp */,
+				31FA3F1C2402931100D5C95E /* Menu.hpp */,
+				31FA3F1E240298A800D5C95E /* Global.cpp */,
+				31FA3F1F240298A800D5C95E /* Global.hpp */,
+				31FA3F212402A47800D5C95E /* Tourist.cpp */,
+				31FA3F222402A47800D5C95E /* Tourist.hpp */,
+				31FA3F242402A48500D5C95E /* Admin.cpp */,
+				31FA3F252402A48500D5C95E /* Admin.hpp */,
+				316880DD2408D94F00D9FB87 /* Graph.cpp */,
+				316880DE2408D94F00D9FB87 /* Graph.hpp */,
+				317FC458241C73B000BCE3EA /* RBTree.cpp */,
+				317FC459241C73B000BCE3EA /* RBTree.hpp */,
+			);
+			path = "基于清华大学的校园导游系统";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31FA3F10240292E700D5C95E /* 基于清华大学的校园导游系统 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31FA3F18240292E700D5C95E /* Build configuration list for PBXNativeTarget "基于清华大学的校园导游系统" */;
+			buildPhases = (
+				31FA3F0D240292E700D5C95E /* Sources */,
+				31FA3F0E240292E700D5C95E /* Frameworks */,
+				31FA3F0F240292E700D5C95E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "基于清华大学的校园导游系统";
+			productName = "基于清华大学的校园导游系统";
+			productReference = 31FA3F11240292E700D5C95E /* 基于清华大学的校园导游系统 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31FA3F09240292E700D5C95E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "🍓XJK";
+				TargetAttributes = {
+					31FA3F10240292E700D5C95E = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 31FA3F0C240292E700D5C95E /* Build configuration list for PBXProject "基于清华大学的校园导游系统" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 31FA3F08240292E700D5C95E;
+			productRefGroup = 31FA3F12240292E700D5C95E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31FA3F10240292E700D5C95E /* 基于清华大学的校园导游系统 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31FA3F0D240292E700D5C95E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FA3F20240298A800D5C95E /* Global.cpp in Sources */,
+				31FA3F1D2402931100D5C95E /* Menu.cpp in Sources */,
+				31FA3F262402A48500D5C95E /* Admin.cpp in Sources */,
+				317FC45A241C73B000BCE3EA /* RBTree.cpp in Sources */,
+				31FA3F232402A47800D5C95E /* Tourist.cpp in Sources */,
+				316880DF2408D94F00D9FB87 /* Graph.cpp in Sources */,
+				31FA3F15240292E700D5C95E /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		31FA3F16240292E700D5C95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		31FA3F17240292E700D5C95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		31FA3F19240292E700D5C95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		31FA3F1A240292E700D5C95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31FA3F0C240292E700D5C95E /* Build configuration list for PBXProject "基于清华大学的校园导游系统" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FA3F16240292E700D5C95E /* Debug */,
+				31FA3F17240292E700D5C95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31FA3F18240292E700D5C95E /* Build configuration list for PBXNativeTarget "基于清华大学的校园导游系统" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FA3F19240292E700D5C95E /* Debug */,
+				31FA3F1A240292E700D5C95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31FA3F09240292E700D5C95E /* Project object */;
+}

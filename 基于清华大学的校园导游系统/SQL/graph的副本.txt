@@ -1,0 +1,11 @@
+mingde hongyi 40
+mingde tushuguan 20
+mingde bei8 100
+mingde caochang 50
+mingde xinxilou 20
+bei8 xinxilou 10
+hongyi nanyuan 30
+manyuan caochang 20
+lanqiuchang caochang 5
+lanqiuchang hongyi 10
+mingde lanqiuchang 20
