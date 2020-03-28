@@ -12,7 +12,7 @@
 #include "Global.hpp"
 #include "RBTree.hpp"
 
-const int INF = 1e9;
+const int INF = 0x3f3f3f3f;
 
 //边
 struct edge {
@@ -32,13 +32,18 @@ class Graph {
     void SaveGraph() const; //保存地图至文件(用邻接表)
     void BfsInFile(const int &index, vector < int > &done, ofstream &Infile, bool &flag) const; //BFS周围点保存图以防止保存重复信息
     void Input() const;
-    pair < int , vector < int > > Floyd(string start, string end) const;
+    pair < int , vector < string > > SPFA(const string start, const string end) const;//SPFA最短路
+    pair < int , vector < string > > Dijkstra(const string start, const string end) const; //Dijkstra最短路
+    pair < int , vector < string > > Floyd(const string start, const string end) const; //Floyd最短路
+    void StorePath(int x, int s, int pre[], vector < string > &path) const; //最短路径存到容器中
+    pair < int , vector < string > > TSP(const string start) const; //状态压缩dp求解旅行商问题
     ~Graph() {}; //析构函数
  private:
     RBTree < string , int > name; //名字对应表
     vector < string > info; //数字对应景点名字
     vector < vector < edge > > G; //邻接表
     vector < vector < int > > M;//邻接矩阵
+    int count; //景点数量
 };
 
 #endif /* Graph_hpp */

@@ -14,8 +14,14 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <queue>
+#include <cstring>
+#include <ctime>
+#include <cstdio>
 
 #define debug
+#define di(s) cout << "-----------" << s << "-----------" << '\n';
+#define rt(s, e) cout << "Running time is: " << static_cast<double>(e - s) / CLOCKS_PER_SEC * 1000 << "ms" << '\n' << '\n';//输出运行时间为毫秒
 
 using namespace std;
 

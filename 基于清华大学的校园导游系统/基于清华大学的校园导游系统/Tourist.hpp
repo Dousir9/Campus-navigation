@@ -16,6 +16,8 @@ class Tourist {
  public:
     //获取图信息的操作
     void Travel(const Graph &G) const;
+    void MinLength(const Graph &G) const; //最短路径
+    void TSP(const Graph &G) const; //TSP旅行商问题
 };
 
 #endif /* Tourist_hpp */

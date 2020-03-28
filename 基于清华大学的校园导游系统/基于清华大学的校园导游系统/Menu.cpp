@@ -72,9 +72,10 @@ void Menu::MenuRun(Graph &G) {
 //输出菜单信息 (游客菜单)
 void TouristMenu::ShowMenuInfo() {
     printf("1.遍历地图\n");
-    printf("2.游客功能2\n");
-    printf("3.返回\n");
-    printf("4.退出系统\n");
+    printf("2.求最短路\n");
+    printf("3.最快游览路线\n");
+    printf("4.返回\n");
+    printf("5.退出系统\n");
 }
 
 //游客菜单运行
@@ -92,13 +93,18 @@ void TouristMenu::MenuRun(const Graph &G) {
             break;
         case '2':
             //游客操作2
-            
+            tourist.MinLength(G);
             MenuRun(G);
             break;
-        case '3': //返回主菜单
+        case '3':
+            //游客操作3
+            tourist.TSP(G);
+            MenuRun(G);
+            break;
+        case '4': //返回主菜单
             return ;
             break;
-        case '4': //退出系统
+        case '5': //退出系统
             exit(0);
         default: //应对异常输入
             ShowError();

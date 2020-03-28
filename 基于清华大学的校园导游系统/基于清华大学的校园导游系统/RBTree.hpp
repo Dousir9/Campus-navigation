@@ -46,7 +46,8 @@ class RBTree {
     RBTree();
     void Insert(const event < T1, T2 > key); //对外接口: 插入操作
     void Delete(const T1 first); //对外接口: 删除操作
-    pair < event < T1*, T2* > , bool >* Find(const T1 first); //对外接口: 查找操作，返回指针
+    pair < event < T1*, T2* > , bool >* Find(const T1 first) ; //对外接口: 查找操作，返回指针,用于增删
+    int FindIndex(const T1 first) const; //对外接口: 查找操作，返回对应下标。
 #ifdef debug
     void Pre(); //对外接口: 先序遍历
     void In(); //对外接口: 中序遍历
@@ -70,7 +71,8 @@ class RBTree {
     void Case3_3(Node < T1, T2 >  *o, int c); //删除情况3.3: 兄弟结点为黑，没有侄子结点，父节点为红
     void Case3_4(Node < T1, T2 >  *o); //删除情况3.4: 兄弟结点为黑，没有侄子结点，父节点为黑，不断向上调整
     void RemoveNode(Node < T1, T2 >  *o, int c); //删除结点
-    pair < event < T1*, T2* > , bool >* BinarySearch(Node < T1, T2 > * &o, const T1 first); //内部接口: 二分查找
+    pair < event < T1*, T2* > , bool >* BinarySearch(Node < T1, T2 > * &o, const T1 first); //内部接口: 二分查找,返回指针，用于增删
+    int BinarySearchIndex(const Node < T1, T2 > * o, const T1) const; //内部接口: 二分查找,返回对应下标
     void Pr(Node < T1 , T2 > * &root); //内部接口: 先序遍历
     void I(Node < T1 , T2 > * &root); //内部接口: 中序遍历
     void Po(Node < T1 , T2 > * &root); //内部接口: 后序遍历
@@ -130,7 +132,7 @@ inline void RBTree < T1, T2 > :: Rorate(Node < T1, T2 > * o, int d) {
 // 情况3: 父节点为红色时不断向上调整
 template < class T1, class T2 >
 void RBTree < T1, T2 > :: Check(Node < T1, T2 > * &o) {
-    Node < T1, T2 > * &pre = o->pre;
+    Node < T1, T2 > * &pre = o->pre; //注意，是引用
     if (pre == NULL) { //回退到根节点，将根节点由红变黑
         o->color = 0;
         return;
@@ -339,7 +341,7 @@ void RBTree < T1, T2 > :: DeleteNode(Node < T1, T2 > * &o, const T1 first) {
     }
 }
 
-//外部接口: 查找操作，返回指针
+//对外接口: 查找操作，返回指针,用于增删
 template < class T1, class T2 >
 pair < event < T1*, T2* > , bool >* RBTree < T1, T2 > :: Find(const T1 first) {
     return BinarySearch(root, first);
@@ -363,6 +365,27 @@ pair < event < T1*, T2* > , bool >* RBTree < T1, T2 > :: BinarySearch(Node < T1,
     }
     pair < event < T1*, T2* >, bool > *p = new pair < event < T1*, T2* >, bool > (event< T1*, T2* > (), false);
     return p;
+}
+
+//对外接口: 查找操作，返回对应下标
+template < class T1, class T2 >
+int RBTree < T1, T2 > :: FindIndex(const T1 first) const {
+    return BinarySearchIndex(root, first);
+}
+
+//内部接口: 二分查找，返回对应下标, -1代表没找到
+template < class T1, class T2 >
+int RBTree < T1, T2 > :: BinarySearchIndex(const Node < T1, T2 > * o, const T1 first) const {
+    if (o == NULL) {
+        return -1;
+    } else if (first == o->key.first) {
+        return o->key.second;
+    } else if (first < o->key.first) {
+        return BinarySearchIndex(o->son[0], first);
+    } else {
+        return BinarySearchIndex(o->son[1], first);
+    }
+    return -1;
 }
 
 //外部接口: 先序遍历
