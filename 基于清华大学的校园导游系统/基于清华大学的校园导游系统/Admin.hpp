@@ -10,11 +10,17 @@
 #define Admin_hpp
 
 #include "Global.hpp"
+#include "Graph.hpp"
 
 class Admin {
  public:
     Admin() {}; //默认构造函数
-    //对图进行的操作
+    void Change(Graph &G); //修改景点信息
+    void AddSight(Graph &G); //添加景点
+    void DeleteSight(Graph &G); //删除景点
+    void AddEdge(Graph &G); //添加路径
+    void DeleteEdge(Graph &G); //删除路径
+    void CheckInfo(Graph &G); //信息检查
 };
 
 #endif /* Admin_hpp */

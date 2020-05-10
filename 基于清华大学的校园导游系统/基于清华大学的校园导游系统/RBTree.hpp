@@ -44,22 +44,71 @@ template < class T1, class T2 >
 class RBTree {
  public:
     RBTree();
-    void Insert(const event < T1, T2 > key); //对外接口: 插入操作
-    void Delete(const T1 first); //对外接口: 删除操作
-    pair < event < T1*, T2* > , bool >* Find(const T1 first) ; //对外接口: 查找操作，返回指针,用于增删
-    int FindIndex(const T1 first) const; //对外接口: 查找操作，返回对应下标。
-#ifdef debug
+    
+    /*
+     对外接口：插入操作
+     参数介绍：一个结点的键值对，T1是键，T2是值
+     操作示例：
+     RBTree<string, int> name; 创建红黑树
+     name.Insert(event<string, int>("北京", 5)); 插入结点
+     注意：插入是先用FindIndex查找一下红黑树中是否存在该结点(event中的first是否存在)
+     */
+    void Insert(const event < T1, T2 > key);
+    
+    
+    /*
+     对外接口：删除操作
+     返回值介绍：删除成功返回1，失败返回-1
+     参数介绍：一个结点的键T1
+     操作示例：
+     int x = name.Delete("青岛");
+     */
+    int Delete(const T1 first);
+    
+    
+    /*
+     对外接口：查找操作，用来修改值T2
+     返回值介绍：二元组指针，值T2的指针，用来修改，第二元是bool型变量，若为true，则查找成功，若为false，查找失败T1
+     参数介绍：一个结点的键T1
+     操作示例：
+     auto it = name.Find(str); 或 pair <int*, bool > *it = name.Find(str);
+     if (it->second == true) { //如果找到
+        *it->first = 100; //进行修改
+     }
+     */
+    pair < T2*, bool >* Find(const T1 first) ;
+    
+    
+    /*
+     对外接口：查找键返回值
+     返回值介绍：查找成功返回值，查找失败返回-1
+     参数介绍：一个结点的键T1
+     操作示例：
+     int v = name.FindIndex("北京");
+     */
+    int FindIndex(const T1 first) const;
+    
+    
+    /*
+     对外接口 修改键：先删除在插入
+     返回值介绍：修改成功返回值，不存在该键返回-1
+     参数介绍：要修改结点的键T1，修改后的T1
+     操作示例：
+     int x = ModifyKey("济南", "北京"); //济南修改为北京
+     */
+    int ModifyKey(const T1 first1, const T1 first2);
+    
     void Pre(); //对外接口: 先序遍历
     void In(); //对外接口: 中序遍历
     void Post(); //对外接口: 后序遍历
-#endif
  private:
     Node < T1, T2 > *root; //树根
+    pair < T2*, bool > *p; //用来修改的指针
     inline Node < T1, T2 > * NewNode(event < T1, T2 > key); //生成新结点
     inline void Rorate(Node < T1, T2 > * o, int d); //旋转，0代表左旋，1代表右旋
     void InsertNode(Node < T1, T2 > * &o, Node < T1, T2 > * &pre, const event < T1, T2 > key); //内部接口: 插入结点
     void Check(Node < T1, T2 > * &o); //插入情况3: 父节点为红色时不断向上调整
-    void DeleteNode(Node < T1, T2 > * &o, const T1 first); //内部接口: 删除结点
+    int DeleteNode(Node < T1, T2 > * &o, const T1 first); //内部接口: 删除结点
     Node < T1, T2 > * GetMax(Node < T1, T2 > * o); //获取左子树的最大值作为真正删除点
     void TransferDeleteNode(Node < T1, T2 > * o); //转移待删除点的位置
     inline void TransferInfo(Node < T1, T2 > * &a, Node < T1, T2 > * &b); //待删除结点信息转移b->a
@@ -71,7 +120,7 @@ class RBTree {
     void Case3_3(Node < T1, T2 >  *o, int c); //删除情况3.3: 兄弟结点为黑，没有侄子结点，父节点为红
     void Case3_4(Node < T1, T2 >  *o); //删除情况3.4: 兄弟结点为黑，没有侄子结点，父节点为黑，不断向上调整
     void RemoveNode(Node < T1, T2 >  *o, int c); //删除结点
-    pair < event < T1*, T2* > , bool >* BinarySearch(Node < T1, T2 > * &o, const T1 first); //内部接口: 二分查找,返回指针，用于增删
+    pair < T2*, bool >* BinarySearch(Node < T1, T2 > * &o, const T1 first); //内部接口: 二分查找,返回指针，用于增删
     int BinarySearchIndex(const Node < T1, T2 > * o, const T1) const; //内部接口: 二分查找,返回对应下标
     void Pr(Node < T1 , T2 > * &root); //内部接口: 先序遍历
     void I(Node < T1 , T2 > * &root); //内部接口: 中序遍历
@@ -84,6 +133,8 @@ class RBTree {
 template < class T1, class T2 >
 RBTree < T1, T2 > :: RBTree() {
     root = NULL;
+    T2 *t;
+    p = new pair<T2*, bool>(t, false);
 }
 
 //生成新结点
@@ -177,11 +228,15 @@ void RBTree < T1, T2 > :: InsertNode(Node < T1, T2 > * &o, Node < T1, T2 > * &pr
 
 //对外接口: 删除操作
 template < class T1, class T2 >
-void RBTree < T1, T2 > :: Delete(const T1 first) {
-    if (root->key.first == first && root->son[0] == NULL && root->son[1] == NULL) { //根节点为最后一个结点且根节点是待删除结点
+int RBTree < T1, T2 > :: Delete(const T1 first) {
+    if (root == NULL) {
+        return -1;//树为空，删除失败
+    } else if (root->key.first == first && root->son[0] == NULL && root->son[1] == NULL) { //根节点为最后一个结点且根节点是待删除结点
+        delete root;
         root = NULL;
+        return 1;
     } else {
-        DeleteNode(root, first);
+        return DeleteNode(root, first);
     }
 }
 
@@ -309,7 +364,10 @@ void RBTree < T1, T2 > :: Case3(Node < T1, T2 > * o) {
 
 //删除结点
 template < class T1, class T2 >
-void RBTree < T1, T2 > :: DeleteNode(Node < T1, T2 > * &o, const T1 first) {
+int RBTree < T1, T2 > :: DeleteNode(Node < T1, T2 > * &o, const T1 first) {
+    if (o == NULL) {
+        return -1; //未找到删除结点
+    }
     if (first == o->key.first) {
         if (o->son[0] != NULL && o->son[1] != NULL) { //既有左子树，又有右子树，则进行转移
             Node < T1, T2 >  *del = GetMax(o->son[0]); //得到的结点为叶子结点或者只有左子树
@@ -334,36 +392,36 @@ void RBTree < T1, T2 > :: DeleteNode(Node < T1, T2 > * &o, const T1 first) {
                 Case3(o);
             }
         }
+        return 1; //删除成功
     } else if (first < o->key.first) {
-        DeleteNode(o->son[0], first);
+        return DeleteNode(o->son[0], first);
     } else {
-        DeleteNode(o->son[1], first);
+        return DeleteNode(o->son[1], first);
     }
 }
 
-//对外接口: 查找操作，返回指针,用于增删
+//对外接口: 查找操作，返回指针,用于修改
 template < class T1, class T2 >
-pair < event < T1*, T2* > , bool >* RBTree < T1, T2 > :: Find(const T1 first) {
+pair < T2*, bool >* RBTree < T1, T2 > :: Find(const T1 first) {
     return BinarySearch(root, first);
 }
 
 //内部接口: 二分查找
 template < class T1, class T2 >
-pair < event < T1*, T2* > , bool >* RBTree < T1, T2 > :: BinarySearch(Node < T1, T2 > * &o, const T1 first) {
+pair < T2*, bool >* RBTree < T1, T2 > :: BinarySearch(Node < T1, T2 > * &o, const T1 first) {
     if (o == NULL) {
-        pair < event < T1*, T2* >, bool > *p = new pair < event < T1*, T2* >, bool > (event< T1*, T2* > (), false);
+        p->second = false;
         return p;
     } else if (first == o->key.first) {
-        T1* a = &o->key.first;
-        T2* b = &o->key.second;
-        pair < event < T1*, T2* >, bool > *p = new pair < event < T1*, T2* >, bool > (event< T1*, T2* > (a, b), true);
+        p->first = &o->key.second;
+        p->second = true;
         return p;
     } else if (first < o->key.first) {
         return BinarySearch(o->son[0], first);
     } else {
         return BinarySearch(o->son[1], first);
     }
-    pair < event < T1*, T2* >, bool > *p = new pair < event < T1*, T2* >, bool > (event< T1*, T2* > (), false);
+    p->second = false;
     return p;
 }
 
@@ -386,6 +444,19 @@ int RBTree < T1, T2 > :: BinarySearchIndex(const Node < T1, T2 > * o, const T1 f
         return BinarySearchIndex(o->son[1], first);
     }
     return -1;
+}
+
+template < class T1, class T2 >
+int RBTree < T1, T2 > :: ModifyKey(const T1 first1, const T1 first2) {
+    int x = FindIndex(first1);
+    if (x != -1) {
+        event<T1, T2> a(first2, x);
+        Delete(first1);
+        Insert(a);
+        return 1;
+    } else {
+        return -1;
+    }
 }
 
 //外部接口: 先序遍历

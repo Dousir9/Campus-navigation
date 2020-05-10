@@ -13,6 +13,7 @@
 #include "Tourist.hpp"
 #include "Admin.hpp"
 #include "Graph.hpp"
+#include "Trie.hpp"
 
 //（主）菜单类
 class Menu {
@@ -22,7 +23,7 @@ class Menu {
     void ShowMenuInfo(); //输出菜单内容
     void ShowMenuBottom(); //输出菜单底部
     void ShowError(); //输出异常信息
-    void MenuRun(Graph &G); //运行菜单
+    void MenuRun(Graph &G, Trie &T); //运行菜单
     char Input(); //从键盘接收指令
 };
 
@@ -30,7 +31,7 @@ class Menu {
 class TouristMenu : public Menu {
  public:
     void ShowMenuInfo(); //输出菜单内容
-    void MenuRun(const Graph &G); //运行菜单
+    void MenuRun(const Graph &G, Trie &T); //运行菜单
 };
 
 //管理员菜单类，继承菜单类

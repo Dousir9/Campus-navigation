@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3148DD582439FB21004D41CC /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3148DD562439FB21004D41CC /* Trie.cpp */; };
+		3148DD5B243B4CB2004D41CC /* ACautomaton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3148DD59243B4CB2004D41CC /* ACautomaton.cpp */; };
 		316880DF2408D94F00D9FB87 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316880DD2408D94F00D9FB87 /* Graph.cpp */; };
 		317FC45A241C73B000BCE3EA /* RBTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317FC458241C73B000BCE3EA /* RBTree.cpp */; };
 		31FA3F15240292E700D5C95E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FA3F14240292E700D5C95E /* main.cpp */; };
@@ -29,6 +31,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3148DD562439FB21004D41CC /* Trie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
+		3148DD572439FB21004D41CC /* Trie.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
+		3148DD59243B4CB2004D41CC /* ACautomaton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ACautomaton.cpp; sourceTree = "<group>"; };
+		3148DD5A243B4CB2004D41CC /* ACautomaton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ACautomaton.hpp; sourceTree = "<group>"; };
 		316880DD2408D94F00D9FB87 /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
 		316880DE2408D94F00D9FB87 /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
 		317FC458241C73B000BCE3EA /* RBTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RBTree.cpp; sourceTree = "<group>"; };
@@ -88,6 +94,10 @@
 				316880DE2408D94F00D9FB87 /* Graph.hpp */,
 				317FC458241C73B000BCE3EA /* RBTree.cpp */,
 				317FC459241C73B000BCE3EA /* RBTree.hpp */,
+				3148DD562439FB21004D41CC /* Trie.cpp */,
+				3148DD572439FB21004D41CC /* Trie.hpp */,
+				3148DD59243B4CB2004D41CC /* ACautomaton.cpp */,
+				3148DD5A243B4CB2004D41CC /* ACautomaton.hpp */,
 			);
 			path = "基于清华大学的校园导游系统";
 			sourceTree = "<group>";
@@ -153,7 +163,9 @@
 				31FA3F262402A48500D5C95E /* Admin.cpp in Sources */,
 				317FC45A241C73B000BCE3EA /* RBTree.cpp in Sources */,
 				31FA3F232402A47800D5C95E /* Tourist.cpp in Sources */,
+				3148DD582439FB21004D41CC /* Trie.cpp in Sources */,
 				316880DF2408D94F00D9FB87 /* Graph.cpp in Sources */,
+				3148DD5B243B4CB2004D41CC /* ACautomaton.cpp in Sources */,
 				31FA3F15240292E700D5C95E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

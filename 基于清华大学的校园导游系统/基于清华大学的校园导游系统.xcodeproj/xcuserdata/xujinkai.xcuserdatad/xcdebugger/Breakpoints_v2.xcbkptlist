@@ -2,4 +2,38 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x57fa;&#x4e8e;&#x6e05;&#x534e;&#x5927;&#x5b66;&#x7684;&#x6821;&#x56ed;&#x5bfc;&#x6e38;&#x7cfb;&#x7edf;/Graph.cpp"
+            timestampString = "609306781.164212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "480"
+            endingLineNumber = "480"
+            landmarkName = "Graph::E_delete(string NAME1,string NAME2)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x57fa;&#x4e8e;&#x6e05;&#x534e;&#x5927;&#x5b66;&#x7684;&#x6821;&#x56ed;&#x5bfc;&#x6e38;&#x7cfb;&#x7edf;/ACautomaton.cpp"
+            timestampString = "609306781.164346"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "ACautomaton::StoreInfo(int p, string s, vector&lt;SearchInfo&gt; &amp;end, int flag)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

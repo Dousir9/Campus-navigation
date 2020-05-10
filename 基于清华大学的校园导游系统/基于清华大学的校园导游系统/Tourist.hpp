@@ -11,12 +11,18 @@
 
 #include "Global.hpp"
 #include "Graph.hpp"
+#include "Trie.hpp"
+#include "ACautomaton.hpp"
 
 class Tourist {
  public:
-    //获取图信息的操作
-    void Travel(const Graph &G) const;
-    void MinLength(const Graph &G) const; //最短路径
+    void ShowMap(const Graph &G) const; //查看地图
+    void Recommend(const Graph &G) const; //路线推荐
+    void HotSights(const Graph &G, Trie &T); //热门景点
+    void HotSearch(Trie &T); //热门搜索
+    void SearchTip(Trie &T); //搜索提示
+    void MultiKeywordSearch(const Graph &G, Trie &T); //多关键词搜索
+    void MinLength(const Graph &G) const; //景点间最短路径
     void TSP(const Graph &G) const; //TSP旅行商问题
 };
 
